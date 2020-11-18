@@ -16,7 +16,11 @@ body {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  /*  */
+  /* allows for 3D space for each card when clicked
+  works with 
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  */
   perspective: 1000px;
 }
 
