@@ -24,6 +24,21 @@ function flipCard() {
     // do cards match?
     // console.log(firstCard.dataset.framework);
     // console.log(secondCard.dataset.framework);
+
+    // if successful match, prevent being clicked on again. else return to normal state.
+    if (firstCard.dataset.framework === secondCard.dataset.framework) {
+      // it's a match
+      firstCard.removeEventListener('click', flipCard);
+      secondCard.removeEventListener('click', flipCard);
+    } else {
+      // not a match - also set a timeout so we can
+      // see the flipping
+      setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+      }, 1500);
+    }
+    // console.log('function was executed!');
   }
 }
 cards.forEach((card) => card.addEventListener('click', flipCard));
