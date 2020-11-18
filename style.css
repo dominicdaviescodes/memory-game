@@ -21,6 +21,7 @@ body {
 }
 
 .memory-card {
+  /* subtract margin value from width/height (calc) */
   width: calc(25% - 10px);
   height: calc(33.333% - 10px);
   margin: 5px;
@@ -31,9 +32,15 @@ body {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
+/* make cards smaller when clicked */
 .memory-card:active {
+  /*
+  we set this on the memorty card so this effect has 
+  a starting point of 1 and we make it 3% smaller
+   transform: scale(1); 
+   */
   transform: scale(0.97);
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .memory-card.flip {
@@ -47,7 +54,7 @@ body {
   padding: 20px;
   position: absolute;
   border-radius: 5px;
-  background: #1C7CCC;
+  background: #9d0191;
   backface-visibility: hidden;
 }
 
